@@ -1,0 +1,28 @@
+<mat-toolbar class="cabecalho">
+    <mat-toolbar-row>
+        
+        <button mat-icon-button (click)="toggleSidebar()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <span>NG2</span>
+
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <ul fxLayout="row" fxLayoutGap="20px">
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu" matTooltip="Sair do sistema">
+                        <mat-icon>power_settings_new</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                    <span style="padding: 15px;">{{usuarioLogado}}</span>
+                    <button mat-menu-item (click)="sair()">
+                        <mat-icon>exit_to_app</mat-icon>
+                            Sair
+                    </button>
+
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

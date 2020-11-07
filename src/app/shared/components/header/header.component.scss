@@ -1,0 +1,13 @@
+ul li {
+    list-style: none;
+}
+
+.cabecalho {
+    background-color: #16085b;
+    color: white;
+}
+@media print {
+  :host {
+    display: none;
+  }
+}

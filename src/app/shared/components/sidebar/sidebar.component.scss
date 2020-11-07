@@ -1,0 +1,65 @@
+:host{
+    .mat-icon{
+        vertical-align: middle;
+        margin-right: 20px;
+    }
+}
+.profile-card{
+    text-align: center;
+    padding: 0 20px 20px 20px;
+    img{
+        width: 200px;
+        height: 120px;
+        object-fit: cover;
+    }
+}
+.list-item-active{
+    background-color: rgb(238, 234, 234);
+}
+
+.content-area {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.main-page {
+  padding-left: 262px;
+}
+
+.sideNav-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 262px;
+  background: #fafafa;
+  display: flex;
+}
+
+.vertical-nav {
+  min-width: 262px;
+}
+
+.example-action-buttons {
+  padding-bottom: 20px;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+@media print {
+  :host {
+    display: none;
+  }
+}

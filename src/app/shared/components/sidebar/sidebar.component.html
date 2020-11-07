@@ -1,0 +1,172 @@
+<mat-nav-list closed>
+  <div class="profile-card">
+    <img class="logo" src="assets/images/logop.png" alt="logo">
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <mat-accordion class="example-headers-align" [multi]="false">
+    <mat-expansion-panel *ngIf="role == 'ROLE_ADMIN'">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>home</mat-icon>
+
+        </mat-panel-title>
+        <mat-panel-description>
+          Início
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/" [routerLinkActiveOptions]="{exact:
+      true}">
+        Relatórios
+      </a>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>groups</mat-icon>
+
+        </mat-panel-title>
+        <mat-panel-description>
+          Parceiro
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/parceiro/salvar" [routerLinkActiveOptions]="{exact:
+    true}">
+        Cadastar
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/parceiro/todos" [routerLinkActiveOptions]="{exact:
+    true}">
+        Listar
+      </a>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>directions_car</mat-icon>
+
+        </mat-panel-title>
+        <mat-panel-description>
+          Veículo
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/veiculo/salvar" [routerLinkActiveOptions]="{exact:
+    true}">
+        Cadastar
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/veiculo/todos" [routerLinkActiveOptions]="{exact:
+    true}">
+        Listar
+      </a>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>category</mat-icon>
+
+        </mat-panel-title>
+        <mat-panel-description>
+          Segmento
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/segmento/salvar" [routerLinkActiveOptions]="{exact:
+    true}">
+        Cadastar
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/segmento/todos" [routerLinkActiveOptions]="{exact:
+    true}">
+        Listar
+      </a>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>add_business</mat-icon>
+
+        </mat-panel-title>
+        <mat-panel-description>
+          Fornecedor
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/fornecedor/salvar" [routerLinkActiveOptions]="{exact:
+    true}">
+        Cadastar
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/fornecedor/todos" [routerLinkActiveOptions]="{exact:
+    true}">
+        Listar
+      </a>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>payment</mat-icon>
+
+        </mat-panel-title>
+        <mat-panel-description>
+          Método de Pagamento
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/metodo-pagamento/salvar"
+        [routerLinkActiveOptions]="{exact:
+    true}">
+        Cadastar
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/metodo-pagamento/todos"
+        [routerLinkActiveOptions]="{exact:
+    true}">
+        Listar
+      </a>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>receipt</mat-icon>
+
+        </mat-panel-title>
+        <mat-panel-description>
+          Lançamento
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/lancamento/salvar" [routerLinkActiveOptions]="{exact:
+    true}">
+        Cadastar
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/lancamento/todos" [routerLinkActiveOptions]="{exact:
+    true}">
+        Listar
+      </a>
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+
+</mat-nav-list>
+<br>
