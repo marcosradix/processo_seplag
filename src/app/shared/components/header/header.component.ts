@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 const helper = new JwtHelperService();
-const token = localStorage.getItem('locpoint_token');
+const token = localStorage.getItem('ng2_token');
 const decodedToken = helper.decodeToken(token);
 this.usuarioLogado = decodedToken['sub'];
   }
@@ -34,7 +34,7 @@ this.usuarioLogado = decodedToken['sub'];
 
   async sair(){
     console.log("saindo...");
-    localStorage.removeItem('locpoint_token');
+    localStorage.removeItem('ng2_token');
     await this.route.navigate(['/login']);
   }
 

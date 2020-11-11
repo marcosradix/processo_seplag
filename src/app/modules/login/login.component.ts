@@ -50,7 +50,7 @@ teste(){
             this.loginService.signin(this.form.value).subscribe((data) =>{
                 console.log(data);
                 if(data != null){
-                localStorage.setItem("locpoint_token", data['accessToken']);
+                localStorage.setItem("ng2_token", data['accessToken']);
                 const helper = new JwtHelperService();
                 const decodedToken = helper.decodeToken(data['accessToken']);
                 console.log(decodedToken['roles'][RoleNames.ROLE_ADMIN]);

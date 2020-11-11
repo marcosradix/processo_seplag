@@ -15,7 +15,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     const helper = new JwtHelperService();
-    const token = localStorage.getItem('locpoint_token');
+    const token = localStorage.getItem('ng2_token');
     const decodedToken = helper.decodeToken(token);
     this.role = decodedToken['roles'][RoleNames.ROLE_ADMIN];
   }
