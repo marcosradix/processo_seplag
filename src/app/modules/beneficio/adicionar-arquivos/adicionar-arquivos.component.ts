@@ -71,6 +71,10 @@ export class AdicionarArquivosComponent implements OnInit {
 
   }
 
+  removeEmptyDoc(documentos: Array<Documento>):Array<Documento>{
+    return this.documentos = this.documentos.filter(doc => doc.nomeDoc !== undefined);
+  }
+
   fileEventChange(fileInput: any) {
     this.documentos = [];
     this.arquivos = fileInput.target.files;
@@ -93,7 +97,6 @@ showPdf(documento:any) {
         const fileName = documento.nomeDoc;
         downloadLink.href = documento.arquivoBase64;
         downloadLink.download = fileName;
-        downloadLink.target="_blank";
         downloadLink.click();
     }
 }
