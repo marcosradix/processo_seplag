@@ -8,17 +8,12 @@ import { RoleNames } from 'src/app/enuns/role_names';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent {
   role: any;
 
   constructor() { }
 
-  ngOnInit(): void {
-    const helper = new JwtHelperService();
-    const token = localStorage.getItem('ng2_token');
-    const decodedToken = helper.decodeToken(token);
-    this.role = decodedToken['roles'][RoleNames.ROLE_ADMIN];
-  }
+
 
   expanded = new Array(3).fill(false);
 @ViewChild(MatAccordion) accordion: MatAccordion;

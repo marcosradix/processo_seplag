@@ -73,7 +73,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatProgressSpinnerModule,
     MatSortModule,
     MatExpansionModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    
 
   ],
   exports:[

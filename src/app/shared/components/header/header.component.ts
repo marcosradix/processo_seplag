@@ -8,7 +8,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
 
 @Output() titleChange: EventEmitter<String> = new EventEmitter<String>();
@@ -17,12 +17,7 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-const helper = new JwtHelperService();
-const token = localStorage.getItem('ng2_token');
-const decodedToken = helper.decodeToken(token);
-this.usuarioLogado = decodedToken['sub'];
-  }
+
 
   toggleSidebar(){
     this.toggleSidebarForMe.emit();
@@ -34,7 +29,6 @@ this.usuarioLogado = decodedToken['sub'];
 
   async sair(){
     console.log("saindo...");
-    localStorage.removeItem('ng2_token');
     await this.route.navigate(['/login']);
   }
 

@@ -1,0 +1,82 @@
+<mat-accordion>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h2>Identificação</h2>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <ng-template [ngIf]="shouldRender">
+            <div fxLayout="row" fxLayoutAlign="space-evenly center">
+                <input class="ng-hide" id="input-file-id" type="file" accept=".pdf"
+                    (change)="fileEventChange($event)" />
+                <br>
+                <button mat-raised-button color="primary" (click)="salvar()"
+                    disabled="{{nomesDosArquivos.length <= 0 }}">Salvar</button>
+            </div>
+        </ng-template>
+
+
+        <div *ngIf="documentos.length > 0">
+            <h4>Arquivos</h4>
+            <ul>
+
+                <ng-template [ngIf]="!shouldRender">
+                    <li *ngFor="let doc of documentos">
+
+                        <a (click)="showPdf(doc)" href="javascript:void(0)">
+                            <span>{{doc.nomeDoc}}</span>
+                        </a>
+                    </li>
+                </ng-template>
+
+                <ng-template [ngIf]="shouldRender">
+                    <li *ngFor="let doc of documentos">
+                        <span>{{doc.nomeDoc}}</span>
+                    </li>
+                </ng-template>
+
+            </ul>
+
+        </div>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>       
+            <h2>Vida Funcional</h2>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div fxLayout="row" fxLayoutAlign="space-evenly center">
+            <input class="ng-hide" id="input-file-id" multiple type="file" accept=".pdf" />
+            <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+            <h2>Contagem de Tempo</h2>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div fxLayout="row" fxLayoutAlign="space-evenly center">
+            <input class="ng-hide" id="input-file-id" multiple type="file" accept=".pdf" />
+            <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+               <h2>Remuneração/Proventos</h2>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div fxLayout="row" fxLayoutAlign="space-evenly center">
+            <input class="ng-hide" id="input-file-id" multiple type="file" accept=".pdf" />
+            <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+        </div>
+    </mat-expansion-panel>
+
+</mat-accordion>

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrlApi: "http://localhost:8080/ng2"
+  urlApi: "http://localhost:3000"
+
 
 };
 

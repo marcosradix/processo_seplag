@@ -1,0 +1,40 @@
+<form [formGroup]="form" novalidate class="e-form">
+
+<div class="example-container">
+  <mat-form-field  appearance="fill">
+    <mat-label>Nome do benefício</mat-label>
+    <input matInput placeholder="Ex. Marcos" formControlName="nome">
+    <mat-error *ngIf="form.get('nome').getError('required')">
+        <strong>O campo deve ser informado</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field  appearance="fill">
+    <mat-label>CPF do beneficiário</mat-label>
+    <input matInput formControlName="cpf">
+        <mat-error *ngIf="form.get('cpf').getError('required')">
+        <strong>O campo deve ser informado</strong>
+    </mat-error>
+  </mat-form-field>
+
+    <mat-form-field  appearance="fill">
+    <mat-label>Orgão atual</mat-label>
+    <input matInput placeholder="Ex. SEJUS" formControlName="orgao">
+        <mat-error *ngIf="form.get('orgao').getError('required')">
+        <strong>O campo deve ser informado</strong>
+    </mat-error>
+  </mat-form-field>
+
+    <mat-form-field  appearance="fill">
+    <mat-label>Matricula do servidor</mat-label>
+    <input matInput placeholder="Ex. 009078cc" formControlName="matricula">
+        <mat-error *ngIf="form.get('matricula').getError('required')">
+        <strong>O campo deve ser informado</strong>
+    </mat-error>
+  </mat-form-field>
+
+</div>
+</form>
+<br>
+     <button mat-raised-button color="primary" disabled="{{form.status !== 'VALID'}}"
+            (click)="salvar()">Salvar</button>

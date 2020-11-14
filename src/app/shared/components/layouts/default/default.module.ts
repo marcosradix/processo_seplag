@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DefaultComponent } from './default.component';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from 'src/app/shared/material.module';
 import { NgxMaskModule } from 'ngx-mask';
 import { TextMaskModule } from 'angular2-text-mask';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DashboardRoutingModule } from 'src/app/modules/dashboard/dashboard-routing.module';
 
 
@@ -23,14 +22,6 @@ import { DashboardRoutingModule } from 'src/app/modules/dashboard/dashboard-rout
     DashboardRoutingModule
 
   ],
-  providers:[
-    //   {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: CustomHttpInterceptorService,
-    //   multi: true
-    // }
-  
-
-  ],
+  providers:[],
 })
 export class DefaultModule { }

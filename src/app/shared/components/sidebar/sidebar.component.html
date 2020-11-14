@@ -1,19 +1,17 @@
 <mat-nav-list closed>
-  <div class="profile-card">
-    <img class="logo" src="assets/images/logop.png" alt="logo">
-  </div>
+ 
 
   <mat-divider></mat-divider>
 
   <mat-accordion class="example-headers-align" [multi]="false">
-    <mat-expansion-panel *ngIf="role == 'ROLE_ADMIN'">
+    <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-icon>home</mat-icon>
+          <mat-icon>fingerprint</mat-icon>
 
         </mat-panel-title>
         <mat-panel-description>
-          Início
+          Identificação
 
         </mat-panel-description>
       </mat-expansion-panel-header>
@@ -28,11 +26,11 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-icon>groups</mat-icon>
+          <mat-icon>work</mat-icon>
 
         </mat-panel-title>
         <mat-panel-description>
-          Parceiro
+          Vida Funcional
 
         </mat-panel-description>
       </mat-expansion-panel-header>
@@ -51,11 +49,11 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-icon>directions_car</mat-icon>
+          <mat-icon>timer</mat-icon>
 
         </mat-panel-title>
         <mat-panel-description>
-          Veículo
+          Contagem de Tempo
 
         </mat-panel-description>
       </mat-expansion-panel-header>
@@ -74,11 +72,11 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-icon>category</mat-icon>
+          <mat-icon>monetization_on</mat-icon>
 
         </mat-panel-title>
         <mat-panel-description>
-          Segmento
+          Remuneração/Proventos
 
         </mat-panel-description>
       </mat-expansion-panel-header>
@@ -94,71 +92,23 @@
 
     </mat-expansion-panel>
 
-    <mat-expansion-panel>
+        <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-icon>add_business</mat-icon>
+          <mat-icon>free_breakfast</mat-icon>
 
         </mat-panel-title>
         <mat-panel-description>
-          Fornecedor
+          Benefícios
 
         </mat-panel-description>
       </mat-expansion-panel-header>
 
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="/fornecedor/salvar" [routerLinkActiveOptions]="{exact:
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/beneficio" [routerLinkActiveOptions]="{exact:
     true}">
         Cadastar
       </a>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="/fornecedor/todos" [routerLinkActiveOptions]="{exact:
-    true}">
-        Listar
-      </a>
-
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <mat-icon>payment</mat-icon>
-
-        </mat-panel-title>
-        <mat-panel-description>
-          Método de Pagamento
-
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="/metodo-pagamento/salvar"
-        [routerLinkActiveOptions]="{exact:
-    true}">
-        Cadastar
-      </a>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="/metodo-pagamento/todos"
-        [routerLinkActiveOptions]="{exact:
-    true}">
-        Listar
-      </a>
-
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <mat-icon>receipt</mat-icon>
-
-        </mat-panel-title>
-        <mat-panel-description>
-          Lançamento
-
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="/lancamento/salvar" [routerLinkActiveOptions]="{exact:
-    true}">
-        Cadastar
-      </a>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="/lancamento/todos" [routerLinkActiveOptions]="{exact:
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/beneficio/todos" [routerLinkActiveOptions]="{exact:
     true}">
         Listar
       </a>
@@ -167,6 +117,4 @@
 
   </mat-accordion>
 
-
 </mat-nav-list>
-<br>
