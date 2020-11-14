@@ -9,6 +9,11 @@
 
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayoutGap="20px">
+             <li>
+                  <button mat-menu-item (click)="voltar()" matTooltip="voltar">
+                        <mat-icon [ngStyle]="{'color':'white'}">undo</mat-icon>
+                    </button>
+                </li>
                 <li>
                     <button mat-button [matMenuTriggerFor]="menu" matTooltip="Sair do sistema">
                         <mat-icon>power_settings_new</mat-icon>

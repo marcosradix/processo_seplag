@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { JwtHelperService } from '@auth0/angular-jwt';
 
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +13,7 @@ export class HeaderComponent {
 
 @Output() titleChange: EventEmitter<String> = new EventEmitter<String>();
   usuarioLogado: String;
-  constructor(private route:Router) {
+  constructor(private route:Router, private location: Location) {
 
   }
 
@@ -31,5 +31,7 @@ export class HeaderComponent {
     console.log("saindo...");
     await this.route.navigate(['/login']);
   }
-
+voltar(){
+  this.location.back();
+}
 }
