@@ -14,17 +14,23 @@ agora é só subir o projeto com o comando npm run start que já está configura
 
 Run `ng build` para fazer build do projeto. Os arquivos do build estarão em `dist/` diretório. Use o `--prod` flag para build de produção.
 
+## Usei api fake
+todos os documentos pdf estão salvos no banco do json-server como base64 String
 
-## Docker
-para dar build com docker basta usar o comanda abaixo
-docker build --pull --rm -f "Dockerfile" -t seplagce:v1 . 
-obs: o ponto faz parte do comando
+## Build Docker
+para dar build com docker e subir a aplicação basta usar o comanda abaixo
+#docker-compose -f "docker-compose.yml" up -d --build
 
-para rodar basta executar o comando a baixa
-docker run --rm -d  -p 80:80/tcp seplagce:v1
+# Caso quereira subir em uma porta diferente pare o container e use o comando a baixo
+docker run -p 8000:80 seplagce:latest
+caso precise subir a aplicação via container use este mesmo comando acima.
 
-para acessar a aplicação que o docker subiu basta acessar no navegador
-`http://localhost:80/`
+para acessar a aplicação que o docker subiu basta acessar no navegador com porta padrão 8081
+`http://localhost:8081/`
 
-## Se usou docker
+## Se usou docker lembrar de subir o json-server
 lembrar de subir o json server na raiz do projeto "json-server --watch db_seplag.json"
+
+### O que é está aplicação
+Esta aplicação é usada para gerar benefício de aposentadoria para servidores públicos por um processo digital
+onde os documentos relativos ao processo são enexados ao sistema e o processo para de um setor para outro até a finalização. 

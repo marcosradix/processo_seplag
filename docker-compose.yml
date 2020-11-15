@@ -1,0 +1,8 @@
+version: '2.0'
+
+services:
+  curso-angular:
+    image: seplagce
+    build: .
+    ports:
+      - 8081:80       
