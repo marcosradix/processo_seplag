@@ -34,6 +34,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatSortModule } from '@angular/material/sort';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSortModule,
     MatExpansionModule,
     FlexLayoutModule,
+    NgxExtendedPdfViewerModule
     
 
   ],
@@ -109,7 +111,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatProgressSpinnerModule,
     MatSortModule,
     MatExpansionModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgxExtendedPdfViewerModule
   ]
 })
 export class SharedModule { }

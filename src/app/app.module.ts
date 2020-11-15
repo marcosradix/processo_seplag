@@ -11,11 +11,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgMaterialMultilevelMenuModule } from 'ng-material-multilevel-menu';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { ToastrModule } from 'ngx-toastr';
+import { ShowPDFComponent } from './modules/show-pdf/show-pdf.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
+    ShowPDFComponent,
     
   ],
   imports: [
@@ -30,7 +32,9 @@ import { ToastrModule } from 'ngx-toastr';
     NgMaterialMultilevelMenuModule,
     ToastrModule.forRoot(),
 
+
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ShowPDFComponent]
 })
 export class AppModule { }

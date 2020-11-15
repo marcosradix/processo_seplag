@@ -1,10 +1,12 @@
+import { ShowPDFComponent } from './../../show-pdf/show-pdf.component';
 import { Documento } from './../../../models/documento.model';
-import { Component, OnInit } from '@angular/core';
+import { AfterContentChecked, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Beneficio } from 'src/app/models/beneficio.model';
 import { BeneficioService } from 'src/app/services/beneficio-service';
 import { NotificationService } from 'src/app/services/notification.service';
 import { v4 as uuidv4 } from 'uuid';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-adicionar-arquivos',
@@ -25,7 +27,8 @@ export class AdicionarArquivosComponent implements OnInit {
     private route: ActivatedRoute,
     private alertService: NotificationService,
     private beneficioService: BeneficioService,
-    private router:Router
+    private router: Router,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -37,7 +40,7 @@ export class AdicionarArquivosComponent implements OnInit {
         }
       );
 
-    if(!this.shouldRender){
+    if (!this.shouldRender) {
       this.beneficioService.carregarBeneficio(this.id).subscribe((data) => {
         data.documentos.forEach((dat) => this.nomesDosArquivos.push(dat.nomeDoc));
         this.documentos = data.documentos;
@@ -45,25 +48,21 @@ export class AdicionarArquivosComponent implements OnInit {
     }
 
   }
-  get shouldRender():boolean{
+  get shouldRender(): boolean {
     return (this.router.url.indexOf("ver") !== -1) ? false : true;
 
   }
   salvar() {
     if (this.documentos.length > 0) {
       this.beneficioService.carregarBeneficio(this.id).subscribe((data) => {
-        if(data.documentos.length > 0){
-          data.documentos.push(this.documento);
-        }else{
-        this.beneficio.documentos = this.documentos;
-        }
         this.beneficio = data;
+        this.documentos.forEach((dat) => this.beneficio.documentos.push(dat));
         this.beneficioService.atualizarBeneficio(this.id, this.beneficio).subscribe((data) => {
           console.log("inserido", data);
           this.alertService.showSuccessSwal("Foi", "Perfeito");
         });
-      }
-      );
+      });
+
     } else {
       this.alertService.showErrorSwal("Erro ao salvar", "Erro");
 
@@ -71,7 +70,7 @@ export class AdicionarArquivosComponent implements OnInit {
 
   }
 
-  removeEmptyDoc(documentos: Array<Documento>):Array<Documento>{
+  removeEmptyDoc(documentos: Array<Documento>): Array<Documento> {
     return this.documentos = this.documentos.filter(doc => doc.nomeDoc !== undefined);
   }
 
@@ -79,24 +78,26 @@ export class AdicionarArquivosComponent implements OnInit {
     this.documentos = [];
     this.arquivos = fileInput.target.files;
     var reader = new FileReader();
-      this.nomesDosArquivos.push(this.arquivos[0]?.name);
-      const file = this.arquivos[0];
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        let fileBase64 = reader.result;
-        this.documento.arquivoBase64 = fileBase64;
-        this.documento.id = uuidv4();
-        this.documento.nomeDoc = file.name;
-        this.documentos.push(this.documento);
-      };
+    this.nomesDosArquivos.push(this.arquivos[0]?.name);
+    const file = this.arquivos[0];
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      let fileBase64 = reader.result;
+      fileBase64 = fileBase64.toString().replace("data:application/pdf;base64,", "");
+      this.documento.arquivoBase64 = fileBase64;
+      this.documento.id = uuidv4();
+      this.documento.nomeDoc = file.name;
+      this.documentos.push(this.documento);
+    };
 
   }
 
-showPdf(documento:any) {
-        const downloadLink = document.createElement("a");
-        const fileName = documento.nomeDoc;
-        downloadLink.href = documento.arquivoBase64;
-        downloadLink.download = fileName;
-        downloadLink.click();
-    }
+   showPdf(documento: Documento) {
+    this.dialog.open(ShowPDFComponent, {
+    width:"80%",
+      data: {
+        pdfData: documento.arquivoBase64
+      }
+    });
+  }
 }

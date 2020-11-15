@@ -21,7 +21,6 @@
         <div *ngIf="documentos.length > 0">
             <h4>Arquivos</h4>
             <ul>
-
                 <ng-template [ngIf]="!shouldRender">
                     <li *ngFor="let doc of removeEmptyDoc(documentos)">
                         <a (click)="showPdf(doc)" href="javascript:void(0)">
