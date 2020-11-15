@@ -15,3 +15,16 @@ agora é só subir o projeto com o comando npm run start que já está configura
 Run `ng build` para fazer build do projeto. Os arquivos do build estarão em `dist/` diretório. Use o `--prod` flag para build de produção.
 
 
+## Docker
+para dar build com docker basta usar o comanda abaixo
+docker build --pull --rm -f "Dockerfile" -t seplagce:v1 . 
+obs: o ponto faz parte do comando
+
+para rodar basta executar o comando a baixa
+docker run --rm -d  -p 80:80/tcp seplagce:v1
+
+para acessar a aplicação que o docker subiu basta acessar no navegador
+`http://localhost:80/`
+
+## Se usou docker
+lembrar de subir o json server na raiz do projeto "json-server --watch db_seplag.json"

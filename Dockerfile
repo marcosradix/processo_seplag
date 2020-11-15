@@ -1,12 +1,10 @@
 # Stage 1
-FROM node:latest as builder
-WORKDIR /seplagce
+FROM node:12.16.1 as builder
+WORKDIR /app
 COPY . .
 RUN npm install
 RUN npm run build --prod
-#RUN npm i -g json-server
 
 # Stage 2
 FROM nginx:alpine
-COPY --from=builder /seplagce/dist/seplagce /usr/share/nginx/html
-#RUN json-server --watch db_seplag.json  --port 3000
+COPY --from=builder /app/dist/seplagce /usr/share/nginx/html
