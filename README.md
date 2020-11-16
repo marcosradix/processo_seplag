@@ -31,6 +31,6 @@ para acessar a aplicação que o docker subiu basta acessar no navegador com por
 ## Se usou docker lembrar de subir o json-server
 lembrar de subir o json server na raiz do projeto "json-server --watch db_seplag.json"
 
-### O que é está aplicação
+### O que é esta aplicação
 Esta aplicação é usada para gerar benefício de aposentadoria para servidores públicos por um processo digital
 onde os documentos relativos ao processo são enexados ao sistema e o processo para de um setor para outro até a finalização. 
