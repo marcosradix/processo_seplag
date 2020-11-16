@@ -34,3 +34,22 @@ lembrar de subir o json server na raiz do projeto "json-server --watch db_seplag
 ### O que é esta aplicação
 Esta aplicação é usada para gerar benefício de aposentadoria para servidores públicos por um processo digital
 onde os documentos relativos ao processo são enexados ao sistema e o processo passa de um setor para outro até a finalização. 
+
+
+### Imagens do projeto
+
+![Screenshot](api_request/projeto_imagens/1.png)
+
+#
+![Screenshot](api_request/projeto_imagens/2.png)
+
+#
+![Screenshot](api_request/projeto_imagens/3.png)
+
+#
+![Screenshot](api_request/projeto_imagens/4.png)
+
+#
+![Screenshot](api_request/projeto_imagens/5.png)
+#
+![Screenshot](api_request/projeto_imagens/6.png)
