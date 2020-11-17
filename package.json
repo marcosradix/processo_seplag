@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "json-server --watch ./db_seplag.json & ng serve --aot",
+    "dev": "json-server --watch db_seplag.json",
+    "start": "json-server --watch data/db.json & ng serve --aot",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
