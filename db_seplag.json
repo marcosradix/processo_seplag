@@ -6,6 +6,7 @@
       "cpf": "041.276.123-80",
       "orgao": "seplag",
       "matricula": "008974CX",
+      "setorId":"t419d492-5272-43a5-95c7-148cef1cc871",
       "documentos": [
         {
           "id": "1",
@@ -19,6 +20,7 @@
       "cpf": "042.274.123-88",
       "orgao": "seplag",
       "matricula": "009974CC",
+      "setorId":"t419d492-5272-43a5-95c7-148cef1cc871",
       "documentos": [
         {
           "id": "66fbb1a1-6f15-41fd-86a2-704316aefd4a",
@@ -32,6 +34,7 @@
       "cpf": "042.274.222-88",
       "orgao": "seplag",
       "matricula": "009974HH",
+      "setorId":"t419d492-5272-43a5-95c7-148cef1cc871",
       "documentos": [
         {
           "id": "66fbb1a1-6f15-41fd-86a2-704316aefd4a",
@@ -50,6 +53,7 @@
       "cpf": "041.345.567-90",
       "orgao": "SEFIN",
       "matricula": "990238lx",
+      "setorId":"t419d492-5272-43a5-95c7-148cef1cc871",
       "documentos": [
         {
           "id": "66fbb1a1-6f15-41fd-86a2-704316aefd4a",
@@ -63,6 +67,7 @@
       "cpf": "094.345.567-90",
       "orgao": "TRTCE",
       "matricula": "90873213df",
+      "setorId":"t419d492-5272-43a5-95c7-148cef1cc871",
       "documentos": []
     },
     {
@@ -71,6 +76,7 @@
       "cpf": "8382382",
       "orgao": "orgão teste",
       "matricula": "8923293dfdf",
+      "setorId":"t419d492-5272-43a5-95c7-148cef1cc871",
       "documentos": [
         {
           "id": "411fbcb8-dc7b-42ab-9d06-d43c3578181c"
@@ -83,6 +89,7 @@
       "cpf": "09.32.32-99",
       "orgao": "Teste atual",
       "matricula": "88992gg",
+      "setorId":"t419d492-5272-43a5-95c7-148cef1cc871",
       "documentos": [
         {
           "id": "c7abaed7-9123-421a-a220-b963a1db05ad"
@@ -99,5 +106,14 @@
         }
       ]
     }
+  ],
+  "setores":[
+    {
+      "id":"t419d492-5272-43a5-95c7-148cef1cc871",
+      "nomeSetor":"CESINF"
+    }
+  ],
+  "tramites":[
+    
   ]
 }

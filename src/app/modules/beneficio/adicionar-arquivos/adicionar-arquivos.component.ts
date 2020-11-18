@@ -92,9 +92,9 @@ export class AdicionarArquivosComponent implements OnInit {
 
   }
 
-   showPdf(documento: Documento) {
+  showPdf(documento: Documento) {
     this.dialog.open(ShowPDFComponent, {
-    width:"80%",
+      width: "80%",
       data: {
         pdfData: documento.arquivoBase64
       }

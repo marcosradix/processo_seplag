@@ -5,5 +5,6 @@ export class Beneficio {
     cpf: String;
     orgao: String;
     matricula: String;
+    setorId:String;
     documentos:Array<Documento> = [];
 }

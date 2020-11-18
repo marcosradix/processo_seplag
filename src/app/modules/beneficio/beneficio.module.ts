@@ -1,5 +1,5 @@
 
-import { SharedModule } from 'src/app/shared/material.module';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +15,7 @@ import { AdicionarArquivosComponent } from './adicionar-arquivos/adicionar-arqui
   imports: [
     CommonModule,
     BeneficioRoutingModule,
-    SharedModule
+    MaterialModule
   ]
 })
 export class BeneficioModule { }

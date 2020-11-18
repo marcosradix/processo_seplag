@@ -1,3 +1,4 @@
+import { Tramite } from './../models/tramite.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -17,6 +18,9 @@ export class BeneficioService {
     return this.http.get<Array<Beneficio>>(`${environment.urlApi}${this.PATH}`);
   }
 
+carregarTramites(id:String): Observable<Array<Tramite>> {
+    return this.http.get<Array<Tramite>>(`${environment.urlApi}${this.PATH}/${id}`);
+  }
 
     carregarBeneficio(id:String): Observable<Beneficio> {
     return this.http.get<Beneficio>(`${environment.urlApi}${this.PATH}/${id}`);

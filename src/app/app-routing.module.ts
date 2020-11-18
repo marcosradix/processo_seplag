@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'beneficio', loadChildren: () => import('./modules/beneficio/beneficio.module').then(d => d.BeneficioModule),
 
   },
+    {
+    path: 'tramites', loadChildren: () => import('./modules/tramitacao/tramitacao.module').then(d => d.TramitacaoModule),
+
+  },
 
     ]
   },

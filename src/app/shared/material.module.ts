@@ -115,4 +115,4 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     NgxExtendedPdfViewerModule
   ]
 })
-export class SharedModule { }
+export class MaterialModule { }

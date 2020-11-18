@@ -1,4 +1,22 @@
 <mat-card>
+<br>
+<div fxLayout="row" fxLayoutGap="20px" fxLayout.xs="column">
+<mat-form-field appearance="fill">
+  <mat-label>Local de origem</mat-label>
+  <mat-select [formControl]="setorDe" >
+    <mat-option *ngFor="let setor of setores$ | async" [value]="setor">{{setor.nomeSetor}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Local de destino</mat-label>
+  <mat-select [formControl]="setorPara">
+    <mat-option *ngFor="let setor of setores$ | async" [value]="setor">{{setor.nomeSetor}}</mat-option>
+  </mat-select>
+</mat-form-field>
+ <button mat-raised-button color="primary" (click)="tramitar()">Tramitar</button>
+</div>
+<br>
+<br>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <ng-container matColumnDef="id">
@@ -7,29 +25,29 @@
   </ng-container>
 
 
-  <ng-container matColumnDef="nome">
-    <th mat-header-cell *matHeaderCellDef> Nome </th>
-    <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+  <ng-container matColumnDef="dataTramitacao">
+    <th mat-header-cell *matHeaderCellDef> Data Tramitação </th>
+    <td mat-cell *matCellDef="let element"> {{element.dataTramitacao}} </td>
   </ng-container>
 
 
-  <ng-container matColumnDef="cpf">
-    <th mat-header-cell *matHeaderCellDef> CPF </th>
-    <td mat-cell *matCellDef="let element"> {{element.cpf}} </td>
+  <ng-container matColumnDef="localOrigem">
+    <th mat-header-cell *matHeaderCellDef> Local de Origem </th>
+    <td mat-cell *matCellDef="let element"> {{element.localOrigem}} </td>
   </ng-container>
 
 
-  <ng-container matColumnDef="orgao">
-    <th mat-header-cell *matHeaderCellDef> Orgão </th>
-    <td mat-cell *matCellDef="let element"> {{element.orgao}} </td>
+  <ng-container matColumnDef="localDestino">
+    <th mat-header-cell *matHeaderCellDef> Local de Destino </th>
+    <td mat-cell *matCellDef="let element"> {{element.localDestino}} </td>
   </ng-container>
 
- <ng-container matColumnDef="matricula">
-    <th mat-header-cell *matHeaderCellDef> Matrícula </th>
-    <td mat-cell *matCellDef="let element"> {{element.matricula}} </td>
+ <ng-container matColumnDef="usuario">
+    <th mat-header-cell *matHeaderCellDef> Usuário </th>
+    <td mat-cell *matCellDef="let element"> {{element.usuario}} </td>
   </ng-container>
 
-    <ng-container matColumnDef="actions">
+    <!-- <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Ações </th>
         <td mat-cell *matCellDef="let element">
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
@@ -51,10 +69,12 @@
             </mat-menu>
 
         </td>
-    </ng-container>
+    </ng-container> -->
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+<br>
+<span *ngIf="resultsLength == 0">Processo ainda não tramitado</span>
 <mat-paginator [length]="resultsLength" [pageSize]="5"></mat-paginator>
 </mat-card>

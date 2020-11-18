@@ -34,6 +34,9 @@ para acessar a aplicação que o docker subiu basta acessar no navegador com por
 Esta aplicação é usada para gerar benefício de aposentadoria para servidores públicos por um processo digital
 onde os documentos relativos ao processo são enexados ao sistema e o processo passa de um setor para outro até a finalização. 
 
+### Obs
+eu não usei uma api real tem muito código que pode ser simplificado
+
 
 ### Imagens do projeto
 
@@ -52,3 +55,7 @@ onde os documentos relativos ao processo são enexados ao sistema e o processo p
 ![Screenshot](projeto_imagens/5.png)
 #
 ![Screenshot](projeto_imagens/6.png)
+#
+![Screenshot](projeto_imagens/7.png)
+#
+![Screenshot](projeto_imagens/8.png)

@@ -45,6 +45,7 @@ export class FormBeneficioComponent implements OnInit {
     console.log(this.form.value);
     console.log(uuidv4());
     this.beneficio.documentos = documentos;
+    this.beneficio.setorId = "t419d492-5272-43a5-95c7-148cef1cc871";
     this.beneficioService.salvarBeneficio(this.beneficio).subscribe((data) => {
       this.clear();
       this.alertService.showSuccessSwal("Salvo com êxito", "Sucesso");

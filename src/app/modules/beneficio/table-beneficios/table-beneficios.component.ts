@@ -14,6 +14,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class TableBeneficiosComponent implements OnInit {
   displayedColumns: string[] = ['id','nome', 'cpf', 'orgao', 'matricula', 'actions'];
   dataSource = new MatTableDataSource<Beneficio>();
+   resultsLength = 0;
   constructor(
      private matPaginatorIntl: MatPaginatorIntl,
      private beneficioService: BeneficioService,
@@ -30,6 +31,7 @@ export class TableBeneficiosComponent implements OnInit {
     this.beneficioService.carregarBeneficios().subscribe((data) => {
       this.dataSource.data = data;
       this.dataSource.paginator = this.paginator;
+       this.resultsLength = data.length;
     });
   }
 
@@ -41,6 +43,11 @@ export class TableBeneficiosComponent implements OnInit {
     if(typeAction === 'ver'){
     console.log(typeAction ,element);
       this.router.navigate(['/beneficio/arquivos/ver', element.id])
+
+    }
+        if(typeAction === 'tramites'){
+    console.log(typeAction ,element);
+      this.router.navigate(['/tramites', element.id])
 
     }
   }
