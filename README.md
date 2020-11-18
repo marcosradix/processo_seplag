@@ -22,10 +22,14 @@ para dar build com docker e subir a aplicação basta usar o comanda abaixo
 docker-compose -f "docker-compose.yml" up -d --build
 este comando faz build e sob a aplicação e o json-server juntos
 
-# Caso quereira subir em uma porta diferente pare o container e use o comando a baixo
+### Caso quereira subir em uma porta diferente pare o container e use o comando a baixo
 docker run -p 8000:80 seplagce:<tag>
 ex. docker run -p 8000:80 seplagce:latest
 caso precise subir a aplicação via container use este mesmo comando acima.
+
+### volume compartilhado do container
+a pasta aqui dentro do projeto data está com volume compartilhado com o container toda vez que houver alteração
+dentro do container reflete nela ou se houver alteração nela reflete no container.
 
 para acessar a aplicação que o docker subiu basta acessar no navegador com porta padrão 8081
 `http://localhost:8081/`
@@ -35,7 +39,7 @@ Esta aplicação é usada para gerar benefício de aposentadoria para servidores
 onde os documentos relativos ao processo são enexados ao sistema e o processo passa de um setor para outro até a finalização. 
 
 ### Obs
-eu não usei uma api real tem muito código que pode ser simplificado
+Eu não usei uma api real tem muito código que pode ser simplificado
 
 
 ### Imagens do projeto
