@@ -7,6 +7,6 @@ services:
     ports:
       - 8081:80
   json-server:
-    image: marcosradix/json-server:v3
+    image: marcosradix/json-server:v4
     ports: 
       - 3000:3000    
