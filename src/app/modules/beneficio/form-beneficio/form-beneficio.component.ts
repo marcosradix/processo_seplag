@@ -1,3 +1,5 @@
+import { Tramite } from './../../../models/tramite.model';
+import { TramiteService } from './../../../services/tramite-service';
 import { Beneficio } from './../../../models/beneficio.model';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -5,6 +7,7 @@ import { BeneficioService } from 'src/app/services/beneficio-service';
 import { NotificationService } from 'src/app/services/notification.service';
 import { v4 as uuidv4 } from 'uuid';
 import { Documento } from 'src/app/models/documento.model';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-form-beneficio',
@@ -18,7 +21,8 @@ export class FormBeneficioComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private alertService: NotificationService,
-    private beneficioService: BeneficioService
+    private beneficioService: BeneficioService,
+    private tramiteService:TramiteService
   ) { }
 
   ngOnInit(): void {
@@ -47,6 +51,14 @@ export class FormBeneficioComponent implements OnInit {
     this.beneficio.documentos = documentos;
     this.beneficio.setorId = "t419d492-5272-43a5-95c7-148cef1cc871";
     this.beneficioService.salvarBeneficio(this.beneficio).subscribe((data) => {
+      let tramiteDefault = new Tramite();
+      tramiteDefault.id = uuidv4();
+      tramiteDefault.dataTramitacao = formatDate(new Date(), 'dd/MM/yyyy HH:MM:SS', 'pt_BR');
+      tramiteDefault.localOrigem = "CESINF";
+      tramiteDefault.localDestino = "CESINF";
+      tramiteDefault.usuario = "padrão";
+      tramiteDefault.idBeneficio = data["id"];
+      this.tramiteService.salvarTramite(tramiteDefault).subscribe((t)=> console.log("tramite ",t));
       this.clear();
       this.alertService.showSuccessSwal("Salvo com êxito", "Sucesso");
     }, erro => {

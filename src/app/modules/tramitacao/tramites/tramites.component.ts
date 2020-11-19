@@ -61,14 +61,6 @@ export class TramitesComponent implements OnInit {
       this.dataSource.data = tramites;
       this.dataSource.paginator = this.paginator;
       this.resultsLength = tramites.length;
-      // if(this.resultsLength == 0){
-      // this.beneficioService.carregarBeneficio(this.idBeneficio).subscribe(data => {
-      //     this.setoresOrigem$ = this.setorService.carregarSetorListOne(data['setorId']);
-      //     });
-      // }else{
-
-      // }
-
     });
   }
   tramitar() {
